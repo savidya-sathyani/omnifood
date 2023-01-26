@@ -1,0 +1,371 @@
+/**
+
+--- 01 - TYPOGRAPHY SYSTEM
+
+-FONT SIZES(PX): 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+-FONT WEIGHTS: 
+  Default: 400, 
+  Medium: 500,
+  Semi Bold: 600,
+  Bold: 700
+-LINE HEIGHTS: 
+  Default: 1, 
+  Small: 1.05, 
+  Medium: 1.2,
+  Paragraph Default: 1.6
+  Other: 1.8
+-LETTER SPACING:
+  Heading: -0.5px
+  Sub-Heading: 0.75px
+
+--- 02 - COLORS
+
+-Primary: 
+  #e67e22
+  #45260a
+  #fff
+-Tags:
+  #51cf66
+  #94d82d
+  #ffd43b
+-Tints:
+  #fdf2e9
+  #fae5d3
+  #eb984e
+-Shades: 
+  #cf711f
+-Accent: 
+-Greys:
+  #767676
+  #6f6f6f
+  #eee
+  #ddd 
+  #aaa
+  #888
+  #555 
+  #333
+
+--- 03 - SHADOWS
+box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+--- 04 - BORDER RADIUS
+Default: 9px
+Tag: 99px
+Medium: 11px
+
+--- 05 - WHITESPACE
+
+-SPACING SYSTEM(PX): 2 / 4 / 8 / 12 /16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+
+  /* One way of doing keyboard focus */
+  /* outline: 1px dotted #e67e22;
+  outline-offset: 0.8rem; */
+
+  /* One way of doing keyboard focus : Using box shadow */
+  box-shadow: 0 0 0 0.8rem rgba(230, 126, 34, 0.5);
+}
+
+html {
+  /* calculation = 10px(our required font size) / 16px(default browser font size) * 100% */
+  /**
+  Otherwise if we used fixed pixel size here, 
+  when user increase their font size in the browser that will not be affected. 
+  That is a major accessibility issue 
+   */
+  /**
+  Default browser font size is 16px = 1rem
+  now 1rem = 10px 
+  */
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  overflow-x: hidden;
+}
+
+strong {
+  font-weight: 500;
+}
+
+/*** COMMON STYLES ***/
+
+/* COMMON CONTAINERS */
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
+.grid--col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+/* END COMMON CONTAINERS */
+
+/* SPACING */
+.mr-sm {
+  margin-right: 1.6rem !important;
+}
+.mt-md {
+  margin-top: 4.8rem !important;
+}
+.mb-md {
+  margin-bottom: 4.8rem !important;
+}
+/* END SPACING */
+
+/* ALIGN */
+.center-text {
+  text-align: center;
+}
+/* END ALIGN */
+
+/* BUTTON */
+.btn,
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  cursor: pointer;
+  /* all means background color and color specified in hover state */
+  transition: all 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+
+  /* Trick to add borders inside the button. else layout shift is happening */
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  border: none;
+  padding: 1.2rem;
+  align-self: end;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
+}
+/* END BUTTON */
+
+/* HEADERS */
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #333;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.heading-sub {
+  display: block;
+  font-size: 1.6rem;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #cf711f;
+  margin-bottom: 1.6rem;
+}
+/* END HEADERS */
+
+/* TAGS */
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: 99px;
+}
+
+.tag--vegetarian {
+  background-color: #51cf66;
+}
+
+.tag--vegan {
+  background-color: #94d82d;
+}
+
+.tag--paleo {
+  background-color: #ffd43b;
+}
+/* END TAGS */
+
+/* LINK */
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #e67e22;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: #cf711f;
+  border-bottom: 1px solid transparent;
+}
+/* END LINKS */
+
+/* LISTS */
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  line-height: 1.2;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #e67e22;
+}
+
+.list-name {
+  font-size: 1.8rem;
+}
+/* END LISTS */
+
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .list-item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .list-icon:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .delivered-faces {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .meal-attribute:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.no-flexbox-gap .meal-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .footer-row div:not(:last-child) {
+  margin-right: 6.4rem;
+}
+
+.no-flexbox-gap .social-links li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flexbox-gap .footer-nav li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
+}
+
+/*** END COMMON STYLES ***/

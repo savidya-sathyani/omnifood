@@ -1,0 +1,56 @@
+/* Hero Section */
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  align-items: center;
+}
+
+.hero-description {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+/* DELIVERED MEALS LAYOUT */
+.hero-delivered-meals {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 8rem;
+}
+
+.delivered-customer-img {
+  display: flex;
+}
+
+.delivered-customer-img img {
+  width: 4.8rem;
+  height: 4.8rem;
+  border: 3px solid #fdf2e9;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+}
+
+.delivered-customer-img img:last-child {
+  margin-right: 0;
+}
+
+.delivered-customer-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.delivered-customer-text span {
+  color: #cf711f;
+  font-weight: 700;
+}
+
+/* HERO BACKGROUND IMAGE */
+.hero-img {
+  width: 100%;
+}

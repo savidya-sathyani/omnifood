@@ -1,0 +1,86 @@
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  position: relative;
+}
+
+.sticky .header {
+  position: fixed;
+  height: 8rem;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(255, 255, 255, 0.936);
+  box-shadow: 0 1.2rem 3.6rem rgba(0, 0, 0, 0.1);
+  z-index: 99;
+}
+
+.sticky .section-hero {
+  margin-top: 9.6rem;
+}
+
+.logo {
+  height: 2.2rem;
+}
+
+/* Navigation styles */
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.main-nav-item:link,
+.main-nav-item:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.main-nav-item:hover,
+.main-nav-item:active {
+  color: #cf711f;
+}
+
+.main-nav-item.nav-cta:link,
+.main-nav-item.nav-cta:visited {
+  border-radius: 9px;
+  color: #fff;
+  background-color: #e67e22;
+  padding: 1.6rem 2.4rem;
+}
+
+.main-nav-item.nav-cta:hover,
+.main-nav-item.nav-cta:active {
+  background-color: #cf711f;
+}
+
+.btn-mobile-nav {
+  border: none;
+  padding: 0.8rem;
+  background: none;
+  cursor: pointer;
+  display: none;
+  z-index: 100;
+}
+
+.mobile-nav-icon {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #333;
+}
+
+.mobile-nav-icon[name="close-outline"] {
+  display: none;
+}
